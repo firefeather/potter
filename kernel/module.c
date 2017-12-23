@@ -1145,6 +1145,39 @@ static int check_version(Elf_Shdr *sechdrs,
 	unsigned int i, num_versions;
 	struct modversion_info *versions;
 
+	if(!strncmp("ansi_cprng", mod->name, 10))
+		return 1;
+	if(!strncmp("backlight", mod->name, 9))
+		return 1;
+	if(!strncmp("br_netfilter", mod->name, 12))
+		return 1;
+	if(!strncmp("dummy_hcd", mod->name, 9))
+		return 1;
+	if(!strncmp("evbug", mod->name, 5))
+		return 1;
+	if(!strncmp("generic_bl", mod->name, 10))
+		return 1;
+	if(!strncmp("gspca_main", mod->name, 10))
+		return 1;
+	if(!strncmp("isdbt", mod->name, 5))
+		return 1;
+	if(!strncmp("lcd", mod->name, 3))
+		return 1;
+	if(!strncmp("mmc_block_test", mod->name, 14))
+		return 1;
+	if(!strncmp("mmc_test", mod->name, 8))
+		return 1;
+	if(!strncmp("rdbg", mod->name, 4))
+		return 1;
+	if(!strncmp("spidev", mod->name, 6))
+		return 1;
+	if(!strncmp("test-iosched", mod->name, 12))
+		return 1;
+	if(!strncmp("ufs_test", mod->name, 8))
+		return 1;
+	if(!strncmp("wlan", mod->name, 4))
+		return 1;
+
 	/* Exporting module didn't supply crcs?  OK, we're already tainted. */
 	if (!crc)
 		return 1;
